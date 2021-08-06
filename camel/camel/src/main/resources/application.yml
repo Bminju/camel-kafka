@@ -1,0 +1,17 @@
+# Apache Camel
+camel:
+  springboot:
+    main-run-controller: true
+    stream-caching-enabled: false
+    jmx-enabled: false
+  dataformat:
+    json-jackson:
+      auto-discover-object-mapper: true
+  component:
+    kafka:
+      max-poll-records: 50
+      shutdown-timeout: 10
+      #broker-url: tcp://localhost:61616 #docker url 
+      brokers: 10.47.39.124:9092,10.47.39.125:9092,10.47.39.67:9092
+      #group-id: ${pleiades.agent.agent-id}
+      max-poll-interval-ms: 600000
